@@ -27,7 +27,7 @@ export default function Footer() {
           </span>
         </div>
         <p className="text-xs" style={{ fontWeight: 500, color: "#888" }}>
-          © {new Date().getFullYear()} — London, United Kingdom
+          © {new Date().getFullYear()} · London, United Kingdom
         </p>
       </div>
     </footer>

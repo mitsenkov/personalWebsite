@@ -1,6 +1,7 @@
 import { COLORS } from '../theme'
 import { Circle, Square, Triangle } from '../components/Decorations'
 import FadeIn from '../components/FadeIn'
+import ContactCTA from '../components/ContactCTA'
 
 // ─── Hero / Avatar Intro ─────────────────────────────────────────────────
 function HeroAbout() {
@@ -29,7 +30,7 @@ function HeroAbout() {
               >
                 <img
                   src="/lego_maxim_bioinformatician.jpeg"
-                  alt="Maxim Tsenkov — Lego avatar"
+                  alt="Maxim Tsenkov, Lego avatar"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -68,16 +69,17 @@ function HeroAbout() {
           </FadeIn>
           <FadeIn delay={200}>
             <p className="text-base sm:text-lg leading-relaxed max-w-xl mb-5" style={{ fontWeight: 500, color: COLORS.black }}>
-              I'm Maxim — a structural bioinformatician based in London, currently
+              I'm Maxim, a structural bioinformatician based in London, currently
               steering the science behind AlphaFold DB at EMBL-EBI in collaboration
-              with Google DeepMind. I spend my days thinking about protein structures,
-              building pipelines that make sense of 214 million+ models, and finding
-              ways to put that knowledge into the hands of researchers worldwide.
+              with Google DeepMind. I work at the intersection of protein structure,
+              data infrastructure, and biological meaning, interpreting structural
+              patterns at scale and building the tools that help researchers worldwide
+              make sense of predicted protein structures.
             </p>
           </FadeIn>
           <FadeIn delay={300}>
             <p className="text-base sm:text-lg leading-relaxed max-w-xl" style={{ fontWeight: 500, color: "#555" }}>
-              But the path here was anything but straight. It started with plants,
+              But the path here was anything but straight. It started with cell culture,
               parasites, a microscope, and a terminal window that changed everything.
             </p>
           </FadeIn>
@@ -119,50 +121,92 @@ function OriginStory() {
                 <div className="w-4 h-4 rounded-full" style={{ backgroundColor: COLORS.red }} />
               </div>
               <p className="text-base sm:text-lg leading-relaxed" style={{ fontWeight: 500, color: COLORS.black }}>
-                My Wellcome Trust PhD programme at the University of Dundee was designed for
-                exploration — twelve-week rotations that let you dive headfirst into completely
-                different worlds of biology. I sequenced RNA in <em>Arabidopsis thaliana</em> using
-                Nanopore technology. I cultured <em>Trypanosoma brucei</em> in a category 3 lab,
-                studying its molecular pathways up close. Every rotation was a new adventure.
+                Before I ever wrote a line of code, I was deep in experimental biology. As an
+                undergraduate at Dundee, I worked on CRISPR/Cas9 gene editing to study chromosome
+                dynamics, examined hypoxia-driven gene regulation through Western blotting and cell
+                transfection, and spent a summer at Jesus College, Oxford, purifying proteins for
+                surface plasmon resonance to study Wnt morphogen signalling. My honours project,
+                characterising mutant PML-RARα variants from relapsed leukaemia patients, was
+                recognised in the top 10% globally by The Undergraduate Awards, out of over 6,400
+                submissions from 47 countries. Every one of these experiences taught me something
+                different about how biology works at the bench. I didn't know it yet, but I was
+                building the diverse biological foundation that would later make me valuable in ways
+                I couldn't have predicted.
               </p>
             </div>
           </FadeIn>
 
-          <FadeIn delay={200}>
+          <FadeIn delay={170}>
             <div className="flex gap-5">
               <div className="shrink-0 mt-2">
                 <div className="w-4 h-4" style={{ backgroundColor: COLORS.blue }} />
               </div>
               <p className="text-base sm:text-lg leading-relaxed" style={{ fontWeight: 500, color: COLORS.black }}>
-                Then I landed in the Barton group with Professor Geoffrey Barton, and
-                tried programming for the first time. My PhD project was, admittedly,
-                overly ambitious — amalgamating neurodevelopment and cell culture with
-                computational data analysis to study OGT (O-GlcNAc transferase). When
-                I was nudged to explore that same protein through an established
-                computational approach in the group, something clicked.
+                My Wellcome Trust PhD programme at the University of Dundee was designed for
+                exploration, twelve-week rotations that threw you headfirst into completely
+                different worlds of biology. I sequenced RNA in <em>Arabidopsis thaliana</em> using
+                Nanopore technology to study molecular pathways. I cultured <em>Trypanosoma brucei</em> in
+                a category 3 lab, studying its molecular pathways up close. Each rotation added
+                another layer to my understanding of biology across species, systems, and scales.
               </p>
             </div>
           </FadeIn>
 
-          <FadeIn delay={300}>
+          <FadeIn delay={240}>
             <div className="flex gap-5">
               <div className="shrink-0 mt-2">
                 <div className="w-4 h-4" style={{ backgroundColor: COLORS.yellow, transform: "rotate(45deg)" }} />
               </div>
               <p className="text-base sm:text-lg leading-relaxed" style={{ fontWeight: 500, color: COLORS.black }}>
-                The work involved studying human population genetics in the context of
-                sequence conservation across evolution. I fell in love with programming —
-                and with the world of TPRs, or TetratricoPeptide Repeats. That spark
-                set me off on a path of self-taught coding, building pipelines, and
-                eventually making the leap to bioinformatics full-time. I haven't
-                looked back since.
+                Then I landed in the Barton group with Professor Geoffrey Barton, and tried
+                programming for the first time. My PhD project studied OGT (O-GlcNAc transferase)
+                and TetratricoPeptide Repeats through the lens of human population genetics and
+                sequence conservation across evolution. Something clicked. I fell in love with
+                programming, with the ability to ask biological questions computationally, at a
+                scale I could never follow as a wet-lab biologist. I quickly realised I would have
+                a bigger reach behind a keyboard, and decided overnight that I should switch over.
+                That spark set me on a path of self-taught coding, building pipelines, and
+                eventually making the leap to bioinformatics full-time.
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={310}>
+            <div className="flex gap-5">
+              <div className="shrink-0 mt-2">
+                <div className="w-4 h-4 rounded-full" style={{ backgroundColor: COLORS.red }} />
+              </div>
+              <p className="text-base sm:text-lg leading-relaxed" style={{ fontWeight: 500, color: COLORS.black }}>
+                After finishing my PhD, I made a deliberate decision. I'd taught myself to code
+                well enough to get research done, but I knew the difference between scrappy scripts
+                that solve a problem and proper engineering. So I went back to the fundamentals,
+                working through courses on Coursera and Codecademy, unlearning bad habits, and
+                picking up the skills I'd need to work at a professional level: cloud
+                infrastructure, software engineering practices, tools like GCP. It was a period of
+                rebuilding, not from scratch, but from a stronger foundation.
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={380}>
+            <div className="flex gap-5">
+              <div className="shrink-0 mt-2">
+                <div className="w-4 h-4" style={{ backgroundColor: COLORS.blue }} />
+              </div>
+              <p className="text-base sm:text-lg leading-relaxed" style={{ fontWeight: 500, color: COLORS.black }}>
+                Then the right door opened. A role on AlphaFold DB at EMBL-EBI, in collaboration
+                with Google DeepMind. I gave it everything I had. And two hours before my winter
+                graduation ceremony in Dundee, I got the call with the offer. Everything I'd built,
+                the biological range from years of experimental work, the computational skills I'd
+                rebuilt from the ground up, came together in a role that needed exactly that
+                combination.
               </p>
             </div>
           </FadeIn>
         </div>
 
         {/* Pull quote */}
-        <FadeIn delay={400}>
+        <FadeIn delay={450}>
           <div
             className="mt-12 border-4 p-6 sm:p-8 relative"
             style={{
@@ -178,8 +222,8 @@ function OriginStory() {
               className="text-lg sm:text-xl lg:text-2xl leading-snug pt-2"
               style={{ fontWeight: 700, color: "#fff" }}
             >
-              I fell in love with programming and the world of TPRs.
-              And that's how I set off into the world of self-taught coding.
+              Everything I'd built, the biological range from years of experimental work,
+              the computational skills I'd rebuilt from the ground up, came together.
             </p>
           </div>
         </FadeIn>
@@ -191,13 +235,17 @@ function OriginStory() {
 // ─── Timeline ────────────────────────────────────────────────────────────
 function Timeline() {
   const events = [
-    { year: "2014", title: "BSc Molecular Genetics", desc: "Began at the University of Dundee, School of Life Sciences.", color: COLORS.yellow, shape: "square" },
-    { year: "2017", title: "First Class Honours", desc: "Graduated with First Class Honours and entered the Wellcome Trust 4-Year PhD Programme.", color: COLORS.red, shape: "circle" },
-    { year: "2017–18", title: "Rotations", desc: "Explored Nanopore RNA sequencing in plants, Trypanosoma brucei cell culture, and found my home in computational biology.", color: COLORS.blue, shape: "diamond" },
-    { year: "2018", title: "The Barton Group", desc: "Joined Professor Geoffrey Barton's lab. First encounter with programming. Studied OGT and TetratricoPeptide Repeats.", color: COLORS.yellow, shape: "circle" },
-    { year: "2022", title: "PhD Completed", desc: "Developed a general method for studying repeat protein evolution using human population variation and structural data.", color: COLORS.red, shape: "square" },
-    { year: "2023", title: "EMBL-EBI × DeepMind", desc: "Joined the Protein Data Bank in Europe as Senior Structural Bioinformatician, steering AlphaFold DB's scientific roadmap.", color: COLORS.blue, shape: "circle" },
-    { year: "2025", title: "PETase Tournament", desc: "Took on the role of Team Lead in a global AI-guided enzyme engineering competition with The Align Foundation.", color: COLORS.yellow, shape: "diamond" },
+    { year: "2014", title: "BSc Molecular Biology", desc: "Began at the University of Dundee, School of Life Sciences.", color: COLORS.yellow, shape: "square" },
+    { year: "2015-2016", title: "Undergraduate Research", desc: "CRISPR/Cas9 gene editing, hypoxia research, and a summer research studentship at Jesus College, Oxford, purifying proteins and studying Wnt morphogen signalling.", color: COLORS.blue, shape: "circle" },
+    { year: "2017", title: "First Class Honours", desc: "Graduated with First Class Honours. Honours project on PML-RARα recognised in the top 10% globally by The Undergraduate Awards. Entered the Wellcome Trust 4-Year PhD Programme.", color: COLORS.red, shape: "circle" },
+    { year: "2017-18", title: "PhD Rotations", desc: "Nanopore RNA sequencing in plants, Trypanosoma brucei cell culture, and the rotation that changed everything, computational biology in the Barton group.", color: COLORS.blue, shape: "diamond" },
+    { year: "2018", title: "The Barton Group", desc: "Joined Professor Geoffrey Barton's lab. First encounter with programming. Studied OGT and TetratricoPeptide Repeats through population genetics and structural data.", color: COLORS.yellow, shape: "circle" },
+    { year: "2022", title: "PhD Completed", desc: "Developed a general method for studying repeat protein evolution using human population variation and protein structural data.", color: COLORS.red, shape: "square" },
+    { year: "2022", title: "The Rebuild", desc: "A deliberate period of upskilling, unlearning self-taught habits, rebuilding programming foundations, and picking up cloud infrastructure and software engineering practices.", color: COLORS.blue, shape: "diamond" },
+    { year: "2023", title: "EMBL-EBI x DeepMind", desc: "Joined the Protein Data Bank in Europe as Senior Structural Bioinformatician, steering AlphaFold DB's scientific roadmap. Offer received two hours before PhD graduation.", color: COLORS.blue, shape: "circle" },
+    { year: "2025", title: "PETase Tournament", desc: "Team Lead in a global AI-guided enzyme engineering competition with The Align Foundation.", color: COLORS.yellow, shape: "diamond" },
+    { year: "2026", title: "Nvidia Collaboration", desc: "[PLACEHOLDER] First-author work introducing predicted homodimers at scale into AlphaFold DB, in collaboration with Nvidia.", color: COLORS.red, shape: "square" },
+    { year: "2026", title: "InsightFold", desc: "Launched a new initiative for Notebook-Driven Development (NbDD) in structural bioinformatics.", color: COLORS.blue, shape: "circle" },
   ]
 
   return (
@@ -297,25 +345,25 @@ function Interests() {
     {
       icon: "✈️",
       title: "Travelling",
-      desc: "Whether it's a conference in Tokyo or a weekend hike in the Highlands, I'm happiest when exploring somewhere new. Work takes me around the world — and I always make time to see what's beyond the venue.",
+      desc: "Whether it's a conference in India or a weekend hike in the Highlands, I'm happiest when exploring somewhere new. Work takes me around the world, and I always make time to see what's beyond the venue.",
       color: COLORS.blue,
     },
     {
       icon: "🍳",
       title: "Cooking",
-      desc: "My true passion outside the lab. I can spend hours at the kitchen counter, working through a recipe from scratch. There's something deeply satisfying about building a meal from raw ingredients — not unlike building a pipeline, honestly.",
+      desc: "My true passion outside the lab. I can spend hours at the kitchen counter, working through a recipe from scratch. There's something deeply satisfying about building a meal from raw ingredients, the same patience and attention that makes a good pipeline makes a good dish.",
       color: COLORS.red,
     },
     {
       icon: "🧗",
       title: "Bouldering & Gym",
-      desc: "I love the problem-solving aspect of bouldering — reading a route, figuring out the sequence, then executing it. The gym keeps the rest in balance. Hiking rounds it out when I want something longer and slower.",
+      desc: "I love the problem-solving aspect of bouldering, reading a route, figuring out the sequence, then executing it. The gym keeps the rest in balance. Hiking rounds it out when I want something longer and slower.",
       color: COLORS.yellow,
     },
     {
       icon: "🌱",
       title: "Plants & Gardening",
-      desc: "From studying Arabidopsis in the lab to nurturing plants at home — some things come full circle. There's a quiet joy in watching something grow that you've tended to.",
+      desc: "From studying Arabidopsis in the lab to nurturing plants at home, some things come full circle. There's a quiet joy in watching something grow that you've tended to.",
       color: COLORS.blue,
     },
   ]
@@ -376,66 +424,14 @@ function Interests() {
             </FadeIn>
           ))}
         </div>
-      </div>
-    </section>
-  )
-}
 
-// ─── Contact CTA ─────────────────────────────────────────────────────────
-function ContactCTA() {
-  return (
-    <section
-      className="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
-      style={{ backgroundColor: COLORS.yellow }}
-    >
-      <Circle color={COLORS.red} size={180} className="-top-12 -left-12 opacity-25" />
-      <Square color={COLORS.blue} size={120} rotate className="-bottom-8 -right-8 opacity-25" />
-
-      <div className="max-w-3xl mx-auto text-center relative z-10">
-        <FadeIn>
-          <h2
-            className="text-3xl sm:text-4xl lg:text-6xl uppercase leading-[0.9] mb-6"
-            style={{ fontWeight: 900, color: COLORS.black, letterSpacing: "-0.04em" }}
+        <FadeIn delay={500}>
+          <p
+            className="mt-10 text-sm sm:text-base text-center"
+            style={{ fontWeight: 500, color: "#555" }}
           >
-            Say Hello
-          </h2>
-        </FadeIn>
-        <FadeIn delay={100}>
-          <p className="text-base sm:text-lg leading-relaxed mb-10" style={{ fontWeight: 500, color: COLORS.black }}>
-            Whether it's about proteins, pipelines, or the best way to slow-cook a ragù — I'd love to hear from you.
+            I speak English, Russian, and Bulgarian.
           </p>
-        </FadeIn>
-        <FadeIn delay={200}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="mailto:tsenkov.max@gmail.com"
-              className="inline-block px-8 py-4 text-sm uppercase tracking-wider border-4 transition-all duration-200 hover:opacity-90 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-              style={{
-                fontWeight: 700,
-                backgroundColor: COLORS.black,
-                color: "#fff",
-                borderColor: COLORS.black,
-                boxShadow: `6px 6px 0px 0px ${COLORS.red}`,
-              }}
-            >
-              Email Me
-            </a>
-            <a
-              href="https://orcid.org/0000-0002-4870-239X"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-block px-8 py-4 text-sm uppercase tracking-wider border-4 transition-all duration-200 hover:opacity-90 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-              style={{
-                fontWeight: 700,
-                backgroundColor: "#fff",
-                color: COLORS.black,
-                borderColor: COLORS.black,
-                boxShadow: `6px 6px 0px 0px ${COLORS.blue}`,
-              }}
-            >
-              ORCID Profile
-            </a>
-          </div>
         </FadeIn>
       </div>
     </section>

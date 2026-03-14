@@ -5,8 +5,9 @@ import { COLORS } from '../theme'
 const NAV_LINKS = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Experience", to: "/#experience" },
-  { label: "Publications", to: "/#publications" },
+  { label: "Experience", to: "/experience" },
+  { label: "Publications", to: "/publications" },
+  { label: "Portfolio", to: "/portfolio" },
   { label: "Contact", to: "/#contact" },
 ]
 
