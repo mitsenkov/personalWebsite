@@ -190,7 +190,7 @@ function ProjectCards() {
             }}
           >
             <Square color={COLORS.black} size={60} rotate className="-top-4 -right-4 opacity-10" />
-            <Circle color={COLORS.black} size={80} className="-bottom-8 left-8 opacity-8" />
+            <Circle color={COLORS.black} size={80} className="-bottom-8 left-32 opacity-8" />
 
             <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
               <div>

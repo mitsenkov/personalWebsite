@@ -226,12 +226,12 @@ function WorkingOn() {
       shape: "circle",
     },
     {
-      label: "Nvidia Collaboration · [Manuscript in preparation]",
-      title: "Predicted Homodimers at Scale",
-      body: "First-author work introducing predicted homodimer structures into AlphaFold DB at scale, in collaboration with Nvidia. The first release of its kind.",
-      linkLabel: "Paper coming soon",
-      linkTo: null,
-      isExternal: false,
+      label: "Nvidia Collaboration · Preprint",
+      title: "Predicted Protein Complexes at Scale",
+      body: "First-author work introducing predicted homodimer and heterodimer structures into AlphaFold DB at scale, in collaboration with EMBL-EBI, Google DeepMind, Nvidia, and Seoul National University. The first release of its kind at this scale.",
+      linkLabel: "Read preprint",
+      linkTo: "https://research.nvidia.com/labs/dbr/assets/data/manuscripts/afdb.html",
+      isExternal: true,
       accent: COLORS.red,
       shape: "square",
     },
@@ -326,18 +326,35 @@ function WorkingOn() {
                   </p>
 
                   {h.linkTo ? (
-                    <Link
-                      to={h.linkTo}
-                      className="inline-flex items-center gap-2 text-xs uppercase tracking-widest border-b-2 pb-0.5 self-start transition-opacity duration-200 hover:opacity-60"
-                      style={{
-                        fontWeight: 700,
-                        color: h.accent,
-                        borderColor: h.accent,
-                      }}
-                    >
-                      {h.linkLabel}
-                      <span style={{ fontSize: "10px" }}>→</span>
-                    </Link>
+                    h.isExternal ? (
+                      <a
+                        href={h.linkTo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 text-xs uppercase tracking-widest border-b-2 pb-0.5 self-start transition-opacity duration-200 hover:opacity-60"
+                        style={{
+                          fontWeight: 700,
+                          color: h.accent,
+                          borderColor: h.accent,
+                        }}
+                      >
+                        {h.linkLabel}
+                        <span style={{ fontSize: "10px" }}>→</span>
+                      </a>
+                    ) : (
+                      <Link
+                        to={h.linkTo}
+                        className="inline-flex items-center gap-2 text-xs uppercase tracking-widest border-b-2 pb-0.5 self-start transition-opacity duration-200 hover:opacity-60"
+                        style={{
+                          fontWeight: 700,
+                          color: h.accent,
+                          borderColor: h.accent,
+                        }}
+                      >
+                        {h.linkLabel}
+                        <span style={{ fontSize: "10px" }}>→</span>
+                      </Link>
+                    )
                   ) : (
                     <span
                       className="inline-flex items-center gap-2 text-xs uppercase tracking-widest pb-0.5 self-start"

@@ -235,17 +235,17 @@ function OriginStory() {
 // ─── Timeline ────────────────────────────────────────────────────────────
 function Timeline() {
   const events = [
-    { year: "2014", title: "BSc Molecular Biology", desc: "Began at the University of Dundee, School of Life Sciences.", color: COLORS.yellow, shape: "square" },
-    { year: "2015-2016", title: "Undergraduate Research", desc: "CRISPR/Cas9 gene editing, hypoxia research, and a summer research studentship at Jesus College, Oxford, purifying proteins and studying Wnt morphogen signalling.", color: COLORS.blue, shape: "circle" },
-    { year: "2017", title: "First Class Honours", desc: "Graduated with First Class Honours. Honours project on PML-RARα recognised in the top 10% globally by The Undergraduate Awards. Entered the Wellcome Trust 4-Year PhD Programme.", color: COLORS.red, shape: "circle" },
-    { year: "2017-18", title: "PhD Rotations", desc: "Nanopore RNA sequencing in plants, Trypanosoma brucei cell culture, and the rotation that changed everything, computational biology in the Barton group.", color: COLORS.blue, shape: "diamond" },
-    { year: "2018", title: "The Barton Group", desc: "Joined Professor Geoffrey Barton's lab. First encounter with programming. Studied OGT and TetratricoPeptide Repeats through population genetics and structural data.", color: COLORS.yellow, shape: "circle" },
-    { year: "2022", title: "PhD Completed", desc: "Developed a general method for studying repeat protein evolution using human population variation and protein structural data.", color: COLORS.red, shape: "square" },
-    { year: "2022", title: "The Rebuild", desc: "A deliberate period of upskilling, unlearning self-taught habits, rebuilding programming foundations, and picking up cloud infrastructure and software engineering practices.", color: COLORS.blue, shape: "diamond" },
-    { year: "2023", title: "EMBL-EBI x DeepMind", desc: "Joined the Protein Data Bank in Europe as Senior Structural Bioinformatician, steering AlphaFold DB's scientific roadmap. Offer received two hours before PhD graduation.", color: COLORS.blue, shape: "circle" },
-    { year: "2025", title: "PETase Tournament", desc: "Team Lead in a global AI-guided enzyme engineering competition with The Align Foundation.", color: COLORS.yellow, shape: "diamond" },
-    { year: "2026", title: "Nvidia Collaboration", desc: "[PLACEHOLDER] First-author work introducing predicted homodimers at scale into AlphaFold DB, in collaboration with Nvidia.", color: COLORS.red, shape: "square" },
-    { year: "2026", title: "InsightFold", desc: "Launched a new initiative for Notebook-Driven Development (NbDD) in structural bioinformatics.", color: COLORS.blue, shape: "circle" },
+    { year: "2014",      title: "BSc Molecular Biology",      desc: "Began at the University of Dundee, School of Life Sciences.",                                                                                                                                                              color: COLORS.yellow, shape: "square" },
+    { year: "2015-2016", title: "Undergraduate Research",     desc: "CRISPR/Cas9 gene editing, hypoxia research, and a summer research studentship at Jesus College, Oxford, purifying proteins and studying Wnt morphogen signalling.",                                                        color: COLORS.blue,   shape: "circle" },
+    { year: "2017",      title: "First Class Honours",        desc: "Graduated with First Class Honours. Honours project on PML-RARα recognised in the top 10% globally by The Undergraduate Awards. Entered the Wellcome Trust 4-Year PhD Programme.",                                        color: COLORS.red,    shape: "square" },
+    { year: "2017-18",   title: "PhD Rotations",              desc: "Nanopore RNA sequencing in plants, Trypanosoma brucei cell culture, and the rotation that changed everything, computational biology in the Barton group.",                                                                 color: COLORS.yellow, shape: "circle" },
+    { year: "2018",      title: "The Barton Group",           desc: "Joined Professor Geoffrey Barton's lab. First encounter with programming. Studied OGT and TetratricoPeptide Repeats through population genetics and structural data.",                                                     color: COLORS.blue,   shape: "square" },
+    { year: "2022",      title: "PhD Completed",              desc: "Developed a general method for studying repeat protein evolution using human population variation and protein structural data.",                                                                                             color: COLORS.red,    shape: "circle" },
+    { year: "2022",      title: "The Rebuild",                desc: "A deliberate period of upskilling, unlearning self-taught habits, rebuilding programming foundations, and picking up cloud infrastructure and software engineering practices.",                                             color: COLORS.yellow, shape: "square" },
+    { year: "2023",      title: "EMBL-EBI x DeepMind",        desc: "Joined the Protein Data Bank in Europe as Senior Structural Bioinformatician, steering AlphaFold DB's scientific roadmap. Offer received two hours before PhD graduation.",                                               color: COLORS.blue,   shape: "circle" },
+    { year: "2025",      title: "PETase Tournament",          desc: "Team Lead in a global AI-guided enzyme engineering competition with The Align Foundation.",                                                                                                                                 color: COLORS.red,    shape: "square" },
+    { year: "2026",      title: "Nvidia Collaboration",       desc: "First-author work introducing predicted homodimers at scale into AlphaFold DB, in collaboration with Nvidia.",                                                                                               color: COLORS.yellow, shape: "circle" },
+    { year: "2026",      title: "InsightFold",                desc: "Launched a new initiative for Notebook-Driven Development (NbDD) in structural bioinformatics.",                                                                                                                           color: COLORS.blue,   shape: "square" },
   ]
 
   return (
@@ -276,7 +276,7 @@ function Timeline() {
           <div className="space-y-6">
             {events.map((ev, i) => (
               <FadeIn key={i} delay={i * 100}>
-                <div className="flex items-start gap-5 sm:gap-8">
+                <div className="flex items-center gap-5 sm:gap-8">
                   <div className="shrink-0 w-16 sm:w-16 text-right relative z-10">
                     <div
                       className="hidden sm:flex items-center justify-center w-16 h-10 border-2"
@@ -284,7 +284,6 @@ function Timeline() {
                         borderColor: "#fff",
                         backgroundColor: ev.color,
                         borderRadius: ev.shape === "circle" ? "9999px" : "0",
-                        transform: ev.shape === "diamond" ? "rotate(45deg)" : "none",
                       }}
                     >
                       <span
@@ -292,7 +291,6 @@ function Timeline() {
                         style={{
                           fontWeight: 900,
                           color: ev.color === COLORS.yellow ? COLORS.black : "#fff",
-                          transform: ev.shape === "diamond" ? "rotate(-45deg)" : "none",
                           fontSize: "10px",
                         }}
                       >
@@ -316,7 +314,6 @@ function Timeline() {
                       style={{
                         backgroundColor: ev.color,
                         borderRadius: ev.shape === "circle" ? "50%" : "0",
-                        transform: ev.shape === "diamond" ? "rotate(45deg)" : "none",
                       }}
                     />
                     <h3

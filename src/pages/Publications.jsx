@@ -96,10 +96,11 @@ function FirstAuthor() {
   const papers = [
     {
       title: "AlphaFold Database expands to proteome-scale quaternary structures",
-      status: "Manuscript in preparation",
+      status: "Preprint available",
+      link: "https://research.nvidia.com/labs/dbr/assets/data/manuscripts/afdb.html",
       authors: "Han, Y.*, Tsenkov, M.I.*, Venanzi, N.A.E.*, Bertoni, D., Cha, S., Chacón, A., Dietrich, N., Fomitchev, B., Goldtzvik, Y., Hsu, D., Austin, J., Ellaway, J., Didi, K., Kovalevskiy, O., Lasecki, D., Laydon, A., Livne, M., Magaña, P., Majewski, M., Nair, S., Paramval, U., Patel, N., Patel, R., Pidruchna, I., Santini Lopez, B., Sohani, P., Tanweer, A., Tran, D., Tretina, K., Vollmar, M., Vu, Q., Žídek, A., Velankar, S.#, Steinegger, M.#, Fleming, J.#, Mirdita, M.#, Dallago, C.#",
       authorNote: "*Equal contribution first authors; #Corresponding authors",
-      annotation: "Introduces predicted homodimer structures into AlphaFold DB at proteome scale for the first time, in an ongoing collaboration with Nvidia.",
+      annotation: "Introduces predicted homodimer and heterodimer structures into AlphaFold DB at proteome scale for the first time, in an ongoing collaboration with Nvidia.",
       accent: COLORS.red,
     },
     {
@@ -140,16 +141,32 @@ function FirstAuthor() {
                   >
                     {p.title}
                   </h3>
-                  <span
-                    className="shrink-0 px-3 py-1 text-xs uppercase tracking-widest border-2"
-                    style={{
-                      fontWeight: 700,
-                      borderColor: p.accent,
-                      color: p.accent,
-                    }}
-                  >
-                    {p.status}
-                  </span>
+                  {p.link ? (
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="shrink-0 px-3 py-1 text-xs uppercase tracking-widest border-2 transition-opacity duration-200 hover:opacity-70"
+                      style={{
+                        fontWeight: 700,
+                        borderColor: p.accent,
+                        color: p.accent,
+                      }}
+                    >
+                      {p.status} →
+                    </a>
+                  ) : (
+                    <span
+                      className="shrink-0 px-3 py-1 text-xs uppercase tracking-widest border-2"
+                      style={{
+                        fontWeight: 700,
+                        borderColor: p.accent,
+                        color: p.accent,
+                      }}
+                    >
+                      {p.status}
+                    </span>
+                  )}
                 </div>
                 <p className="text-sm leading-relaxed mb-2" style={{ fontWeight: 500, color: "#666" }}>
                   <Authors text={p.authors} />
@@ -163,9 +180,20 @@ function FirstAuthor() {
                   className="mt-4 pt-4 border-t-2"
                   style={{ borderColor: COLORS.muted }}
                 >
-                  <p className="text-sm leading-relaxed" style={{ fontWeight: 500, color: "#444", fontStyle: "italic" }}>
+                  <p className="text-sm leading-relaxed mb-3" style={{ fontWeight: 500, color: "#444", fontStyle: "italic" }}>
                     {p.annotation}
                   </p>
+                  {p.link && (
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs uppercase tracking-wider border-b transition-opacity duration-200 hover:opacity-60"
+                      style={{ fontWeight: 700, color: p.accent, borderColor: p.accent }}
+                    >
+                      View preprint →
+                    </a>
+                  )}
                 </div>
               </div>
             </FadeIn>
